@@ -7,24 +7,11 @@
         <img src="{% static 'img/core-img/pizza.png'%}" alt="">
     </div>
 
-    <!-- Search Wrapper -->
-    <div class="search-wrapper">
-        <!-- Close Btn -->
-        <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
+   
+        {% include 'parties/_buscar.html' %}       
+      
 
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <form action="#" method="post">
-                        <input type="search" name="search" placeholder="O que está procurando...">
-                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-        {% include 'parties/menu.html' %}
+        {% include 'parties/_menu.html' %}
 
     <!-- ##### Best Receipe Area Start ##### -->
     <section class="best-receipe-area">
@@ -55,7 +42,7 @@
     </section>
     <!-- ##### Best Receipe Area End ##### -->
 
-  {% include 'parties/footer.html' %} 
+  {% include 'parties/_footer.html' %} 
   {% endblock %}
 
 </html>
