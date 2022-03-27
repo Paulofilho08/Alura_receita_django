@@ -1,3 +1,4 @@
+from multiprocessing.reduction import send_handle
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 # Create your views here.
@@ -27,7 +28,15 @@ def cadastro(request):
     else:    
         return render(request, 'usuarios/cadastro.html')
 def login(request):
-    return render(request,'usuarios/login.html')
+    if request.method == 'POST':
+        email = request.POST['email']
+        senha = request.POST['senha']
+        if email == "" or senha == "":
+            print('Os campos email e senha não podem ficar em branco')
+            return redirect('login')
+        print(email, senha)
+        return redirect('dashboard')
+    return render(request, 'usuarios/login.html')
 
 def dashboard(request):
-    pass
+    return render(request,'usuarios/dashboard.html')
